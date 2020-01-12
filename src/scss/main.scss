@@ -1,0 +1,18 @@
+@import '../../node_modules/prismjs/themes/prism-dark';
+
+pre {
+  white-space: pre-wrap;
+  background-color: black;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#output {
+  display: block;
+  margin-left: -14ch;
+  * {
+    line-height: 20px;
+  }
+}
