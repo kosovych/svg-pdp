@@ -1,18 +1,111 @@
 @import '../../node_modules/prismjs/themes/prism-dark';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 pre {
   white-space: pre-wrap;
   background-color: black;
   border-radius: 6px;
   overflow: hidden;
-  margin-top: 0;
   margin-bottom: 0;
 }
 
-#output {
-  display: block;
-  margin-left: -14ch;
-  * {
-    line-height: 20px;
-  }
+svg {
+  height: auto;
+  margin: 0 auto;
+  border: 1px dashed tomato;
 }
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+kbd {
+  color:#bde052;
+  font-size: 20px;
+}
+.rel {
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+textarea {
+  font-size: 14px;
+  caret-color: white;
+}
+
+textarea {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+parsererror + svg {
+  width: auto !important;
+  height: auto !important;
+}
+//////////////////////////////////////////////////////////////////
+div.prism-live {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column;
+}
+
+textarea.prism-live,
+pre.prism-live {
+	padding: .2rem 2rem;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+textarea.prism-live {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	color: transparent;
+	/* color: hsla(0,0%,100%,.4); */
+	cursor: text;
+	white-space: pre;
+	border: 0;
+	outline: none;
+	background: transparent;
+	resize: none;
+	--selection-background: hsl(320, 80%, 25%);
+	--selection-color: hsla(0, 0%, 100%, .8);
+}
+
+@supports (not (caret-color: black)) and (-webkit-text-fill-color: black) {
+	textarea.prism-live {
+		color: inherit;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+	/* Setting specific colors is needed
+	 * because otherwise Firefox shows blank text */
+	textarea.prism-live::-moz-selection {
+		background: var(--selection-background);
+		color: var(--selection-color);
+	}
+
+	textarea.prism-live::selection {
+		background: var(--selection-background);
+		color: var(--selection-color);
+	}
+
+pre.prism-live {
+	flex: 1;
+	position: relative;
+	pointer-events: none;
+	overflow: hidden;
+	max-height: 100%;
+	--scrollbar-width: 17px;
+	padding-bottom: var(--scrollbar-width);
+	padding-right: var(--scrollbar-width);
+}
+
+	pre.prism-live > code:empty::before {
+		content: " "
+	}

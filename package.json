@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "babel-core": "^6.26.3",
+    "bootstrap": "^4.4.1",
     "highlight.js": "^9.17.1",
     "prismjs": "^1.18.0",
     "vinyl-source-stream": "^2.0.0"
