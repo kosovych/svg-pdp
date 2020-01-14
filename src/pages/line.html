@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body class="container-fluid">
+  <div class="d-flex">
+    <div id="code">
+      <svg viewBox="0 0 300 300" width="300" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="20" x2="200" y2="250" stroke="red" stroke-width="10" />
+      </svg>
+    </div>
+    <div class="ml-16">
+      <p>
+        <kbd>x1</kbd>, <kbd>y1</kbd> - координаты начальной точки линии
+      </p>
+      <p>
+        <kbd>x2</kbd>, <kbd>y2</kbd> - координаты конечной точки линии
+      </p>
+    </div>
+  </div>
+
+  <div class="rel">
+    <pre class="prism-live">
+      <code id="output">
+      </code>
+    </pre>
+    <textarea id="ta-code" class="prism-live language-html"></textarea>
+  </div>
+
+  <button class="btn btn-primary" id="save">Save</button>
+
+	<script src="/js/bundle.js"></script>
+</body>
+
+</html>
