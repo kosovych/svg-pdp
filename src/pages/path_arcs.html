@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body class="container-fluid">
+  <div class="d-flex">
+    <div id="code">
+      <svg viewBox="0 0 300 300" width="300" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150 150 L 90 30 A 100 100 0 0 1 200 30 L 200 30 150 150" stroke-width="2" stroke="green" fill="transparent"></path>
+      </svg>
+    </div>
+    <div class="ml-16">
+      <p>
+        <kbd>A rx ry x-axis-rotation large-arc-flag sweep-flag x y</kbd> - Команда и параметры для построения дуг.
+      </p>
+      <p>
+        <kbd>rx</kbd>, <kbd> ry </kbd> - Радиусы  X и Y (на подобии с Елипсом)
+      </p>
+      <p>
+        <kbd>x-asix-rotation</kbd> - угол поворота Елипса по котором следцет кривая
+      </p>
+      <p>
+        <kbd>large-arc-flag</kbd> - определяет, должна ли дуга быть больше или меньше 180 градусов
+      </p>
+      <p>
+        <kbd>sweep-flag</kbd> - определяет, должна дуга двигаться по отрицательным углам<br>
+        или по положительным, т.е. по сути определяет по какому из двух кругов она будет идти
+      </p>
+    </div>
+  </div>
+
+  <div class="rel">
+    <pre class="prism-live">
+      <code id="output">
+      </code>
+    </pre>
+    <textarea id="ta-code" class="prism-live language-html"></textarea>
+  </div>
+
+  <button class="btn btn-primary" id="save">Save</button>
+
+	<script src="/js/bundle.js"></script>
+</body>
+
+</html>
