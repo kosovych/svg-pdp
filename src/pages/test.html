@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <svg width="600" height="600">
+    <defs>
+      <linearGradient id="Gradient">
+        <stop offset="0" stop-color="red" stop-opacity="1" />
+        <stop offset="1" stop-color="blue" stop-opacity="1" />
+      </linearGradient>
+      <linearGradient id="Gradient2">
+        <stop offset="0" stop-color="yellow" stop-opacity="1" />
+        <stop offset="1" stop-color="green" stop-opacity="1" />
+      </linearGradient>
+      <mask id="mask1">
+        <rect x="0" y="200" width="600" height="200" fill="red"></rect>
+      </mask>
+      <clipPath id="clipPath1">
+        <rect x="0" y="200" width="600" height="200"></rect>
+      </clipPath>
+    </defs>
+      <path d="M300 150 A 150 150 1 1 1 299.99 150" stroke-width="50" stroke="url(#Gradient)" fill="transparent" />
+      <path d="M300 150 A 150 150 1 1 1 299.99 150" stroke-width="50" mask="url(#mask1)" stroke="url(#Gradient2)" fill="transparent" />
+      <path d="M300 150 A 150 150 1 1 1 299.99 150" stroke-width="50" clip-path="url(#clipPath1)" stroke="url(#Gradient2)" fill="transparent" />
+  </svg>
+</body>
+</html>
