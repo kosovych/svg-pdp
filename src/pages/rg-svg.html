@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    svg {
+      outline: 1px solid red;
+      width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      font-size: 0;
+    }
+    .bg {
+      position: absolute;
+      background-image: url(/img/rgsvg.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  
+  <span>
+    <svg viewbox="0 0 800 450">
+      <animate
+        xlink:href="#bublik"
+        attributeName="stroke-dashoffset"
+        from="352"
+        to="0"
+        dur="1.5s"
+        begin="click"
+        fill="freeze"
+        restart="always"
+        id="strokeDashoffset"
+      />
+      <animateTransform
+        xlink:href="#bublik"
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 72 200"
+        to="360 72 200"
+        begin="strokeDashoffset.begin"
+        dur="0.75s"
+        repeatCount="2"
+      />
+      <circle id="bublik" cx="72" cy="200" r="56" stroke-width="28" stroke="black" fill="transparent" stroke-dasharray="352" stroke-dashoffset="352"></circle>
+      <circle id="bublik-bottom" cx="72" cy="200" fill="black">
+        <animate
+          attributeName="cy"
+          from="200"
+          to="314"
+          dur="0.5s"
+          begin="strokeDashoffset.end - 0.8s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="r"
+          from="0"
+          to="34"
+          dur="0.5s"
+          begin="strokeDashoffset.end - 0.8s"
+          fill="freeze"
+        />
+        <animate
+        attributeName="opacity"
+        from="0"
+        to="1"
+        dur="0.5s"
+        begin="strokeDashoffset.end - 0.8s"
+        fill="freeze"
+      />
+      </circle>
+    </svg>
+    <span class="bg"></span>
+  </span>
+</body>
+</html>
