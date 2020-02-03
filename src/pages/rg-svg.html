@@ -34,7 +34,7 @@
 <body>
   
   <span>
-    <svg viewbox="0 0 800 450">
+    <svg viewbox="0 0 800 450" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <animate
         xlink:href="#bublik"
         attributeName="stroke-dashoffset"
@@ -57,7 +57,24 @@
         dur="0.75s"
         repeatCount="2"
       />
-      <circle id="bublik" cx="72" cy="200" r="56" stroke-width="28" stroke="black" fill="transparent" stroke-dasharray="352" stroke-dashoffset="352"></circle>
+      <circle id="bublik-top" r="17" cx="123" cy="120" fill="black" stroke-dasharray="352" stroke-dashoffset="352"></circle>
+      <!-- или обнулить начальные координаты -->
+      <!-- или задать любым способом начальные координыта такие же как и начальной точки path (transform="translate(-123,  -120)") -->
+      <circle id="bublik" cx="72" cy="200" r="56" stroke-width="28" stroke="black" fill="none" stroke-dasharray="352" stroke-dashoffset="352"></circle>
+      <path
+        fill="none"
+        stroke-width="2"
+        stroke="red"
+        d="M72 200 c 264.43645,46.16638 528.87209,92.33263 652.70008,30.19151
+        C 780.52807,218.0504 760.74922,80.602183 708.10685,61.348114 584.46449,25.094044
+        353.95405,73.033825 123.44407,120.97351"
+        id="motionPath"
+      />
+
+      <animateMotion xlink:href="#bublik-top" dur="1s" begin="click" fill="freeze">
+        <mpath xlink:href="#motionPath" />
+      </animateMotion>
+
       <circle id="bublik-bottom" cx="72" cy="200" fill="black">
         <animate
           attributeName="cy"
